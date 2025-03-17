@@ -1,2 +1,7 @@
 EPAC_Exams/
 EPAC_Exams/
+
+databattle/lib/python3.12/site-packages/_mysql_connector.cpython-312-x86_64-linux-gnu.so
+databattle/lib/python3.12/site-packages/mysql/
+databattle/lib/python3.12/site-packages/mysql_connector_python-9.2.0.dist-info/
+gdrive/
