@@ -1,14 +1,26 @@
 import fitz  # PyMuPDF pour extraire le texte des PDF
 import re  # Module pour manipuler les expressions régulières
+import mysql.connector  # Pour interagir avec MySQL
+from mysql.connector import Error  # Gestion des erreurs SQL
+import os
 
-# === FONCTIONS POUR EXTRAIRE LE TEXTE DES PDF ===
-def extract_text_from_pdf(pdf_path):
+
+# Chemin du fichier PDF
+mcq_pdf_path = "./../EPAC_Exams/2022 - EPAC_exam_mcq_en_Part1.pdf"
+solution_pdf_path = "./../EPAC_Exams/2022 - EPAC_Solution_mcq&open.pdf"
+
+
+def is_file_already_processed(conn, pdf_path):
     """
-    Extrait le texte d'un fichier PDF et retourne son contenu sous forme de chaîne de caractères.
+    Vérifie si un fichier PDF a déjà été traité en base de données.
     """
-    doc = fitz.open(pdf_path)
-    text = "\n".join(page.get_text("text") for page in doc)
-    return text
+    cursor = conn.cursor()
+    source_file = os.path.basename(pdf_path)  # Extrait le nom du fichier
+    sql = "SELECT COUNT(*) FROM Question WHERE source_file = %s"
+    cursor.execute(sql, (source_file,))
+    count = cursor.fetchone()[0]
+    
+    return count > 0  # Retourne True si des données existent déjà
 
 
 # === FONCTION DE NETTOYAGE DU TEXTE ===
@@ -18,6 +30,70 @@ def clean_text(text):
     """
     return re.sub(r"\s+", " ", text).strip()
 
+
+
+def connect_to_db():
+    """
+    Établit une connexion à la base de données MySQL.
+    """
+    try:
+        conn = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="",  # Remplace par ton vrai mot de passe MySQL
+            database="quiz_db"
+        )
+        if conn.is_connected():
+            print("Connexion à la base MySQL réussie.")
+            return conn
+    except Error as e:
+        print(f"Erreur de connexion à MySQL : {e}")
+        return None
+
+def insert_question(conn, question_text, question_type, annee, pdf_path):
+    """
+    Insère une question en stockant automatiquement le nom du fichier source.
+    """
+    cursor = conn.cursor()
+    source_file = os.path.basename(pdf_path)  # Extrait le nom du fichier source
+    sql = "INSERT INTO Question (question_text, question_type, annee, source_file) VALUES (%s, %s, %s, %s)"
+    values = (clean_text(question_text), question_type, annee, source_file)
+    cursor.execute(sql, values)
+    conn.commit()
+    return cursor.lastrowid  # Retourne l'ID de la question insérée
+
+def insert_answer(conn, reponse_text, pdf_path):
+    """
+    Insère une réponse en stockant automatiquement le nom du fichier source.
+    """
+    cursor = conn.cursor()
+    source_file = os.path.basename(pdf_path)  # Extrait le nom du fichier source
+    sql = "INSERT INTO Reponse (reponse_text, source_file) VALUES (%s, %s)"
+    values = (clean_text(reponse_text), source_file)
+    cursor.execute(sql, values)
+    conn.commit()
+    return cursor.lastrowid  # Retourne l'ID de la réponse insérée
+
+
+
+def link_question_answer(conn, question_id, reponse_id, is_correct):
+    """
+    Associe une question à une réponse en indiquant si elle est correcte.
+    """
+    cursor = conn.cursor()
+    sql = "INSERT INTO Question_Reponse (question_id, reponse_id, is_correct) VALUES (%s, %s, %s)"
+    cursor.execute(sql, (question_id, reponse_id, is_correct))
+    conn.commit()
+
+
+# === FONCTIONS POUR EXTRAIRE LE TEXTE DES PDF ===
+def extract_text_from_pdf(pdf_path):
+    """
+    Extrait le texte d'un fichier PDF et retourne son contenu sous forme de chaîne de caractères.
+    """
+    doc = fitz.open(pdf_path)
+    text = "\n".join(page.get_text("text") for page in doc)
+    return text
 
 
 # === FONCTION POUR EXTRAIRE LES QUESTIONS QCM ET LEURS CHOIX ===
@@ -73,28 +149,119 @@ def extract_mcq_solutions(text):
     return solutions
 
 
-mcq_text = extract_text_from_pdf("./../EPAC_Exams/2022 - EPAC_exam_mcq_en_Part1.pdf")
-solution_text = extract_text_from_pdf("./../EPAC_Exams/2022 - EPAC_Solution_mcq&open.pdf")
+def insert_justification(conn, question_id, texte):
+    """
+    Insère une justification dans la table Justification.
+    """
+    cursor = conn.cursor()
+    sql = "INSERT INTO Justification (question_id, texte) VALUES (%s, %s)"
+    values = (question_id, clean_text(texte))
+    cursor.execute(sql, values)
+    conn.commit()
+    return cursor.lastrowid  # Retourne l'ID de la justification insérée
 
-# === NORMALISATION DES SAUTS DE LIGNE ===
-mcq_text = re.sub(r"\n{2,}", "\n", mcq_text)  # Remplace plusieurs sauts de ligne consécutifs par un seul
 
-# === LANCEMENT DE L'EXTRACTION ===
+def insert_article(conn, reference, texte, lien):
+    """
+    Insère un article de loi.
+    """
+    cursor = conn.cursor()
+    sql = "INSERT INTO Article (reference, texte, lien) VALUES (%s, %s, %s)"
+    values = (reference, texte, lien)
+    cursor.execute(sql, values)
+    conn.commit()
+    return cursor.lastrowid
+
+def link_justification_article(conn, justification_id, article_id):
+    """
+    Lie une justification à un article juridique.
+    """
+    cursor = conn.cursor()
+    sql = "INSERT INTO Justification_Article (justification_id, article_id) VALUES (%s, %s)"
+    cursor.execute(sql, (justification_id, article_id))
+    conn.commit()
+
+
+def extract_justifications(text):
+    """
+    Extrait les justifications et articles pour chaque question.
+    """
+    pattern = r"Question\s+(\d+):\s+\w\n(.*?)\nLegal basis\s*\n(.*?)(?=\nQuestion\s+\d+:|\Z)"
+    matches = re.findall(pattern, text, re.DOTALL)
+
+    justifications = {}
+    for match in matches:
+        question_number = int(match[0])
+        justification_text = clean_text(match[2])
+        justifications[question_number] = justification_text
+
+    return justifications  # Retourne un dictionnaire {numéro_question: justification}
+
+
+def extract_articles(justification_text):
+    """
+    Extrait uniquement les références légales d'une justification spécifique.
+    """
+    pattern = r"(Rule|Article|Decision) \d+(?:\(\d+\))? EPC"
+    matches = re.findall(pattern, justification_text)
+
+    return list(set(matches))  # Supprime les doublons et retourne une liste propre
+
+
+
+# Extraction du texte
+mcq_text = extract_text_from_pdf(mcq_pdf_path)
+solution_text = extract_text_from_pdf(solution_pdf_path)
+
+# Normalisation
+mcq_text = re.sub(r"\n{2,}", "\n", mcq_text)
+
+# Extraction des données
 mcq_questions = extract_mcq_questions(mcq_text)
 mcq_solutions = extract_mcq_solutions(solution_text)
+justifications = extract_justifications(solution_text)
 
-# === ASSOCIATION DES RÉPONSES AUX QUESTIONS ===
-for i, question in enumerate(mcq_questions):
-    question_number = i + 1  # Les questions sont numérotées à partir de 1
-    question["solution"] = mcq_solutions.get(question_number, "Non disponible")  # Ajoute la réponse correcte si disponible
+# Connexion et insertion dans la base
+# Connexion à la base
+conn = connect_to_db()
 
-# === AFFICHAGE DES RÉSULTATS POUR VÉRIFICATION ===
-print("\nExemple des questions extraites avec choix de réponse et solution :")
-for q in mcq_questions:  # Afficher toutes les questions extraites
-    print("\nQuestion :", q["question"])
-    for choice in q["choices"]:
-        print("  ", choice)
-    print("Réponse correcte :", q["solution"])
+if conn:
+    # Vérifier si le fichier PDF a déjà été traité
+    if is_file_already_processed(conn, mcq_pdf_path):
+        print(f"⚠️ Le fichier '{os.path.basename(mcq_pdf_path)}' a déjà été traité. Aucune action.")
+    else:
+        print(f"✅ Traitement du fichier '{os.path.basename(mcq_pdf_path)}' en cours...")
 
+        # Extraction du texte
+        mcq_text = extract_text_from_pdf(mcq_pdf_path)
+        solution_text = extract_text_from_pdf(solution_pdf_path)
 
+        # Normalisation des sauts de ligne
+        mcq_text = re.sub(r"\n{2,}", "\n", mcq_text)
 
+        # Extraction des données
+        mcq_questions = extract_mcq_questions(mcq_text)
+        mcq_solutions = extract_mcq_solutions(solution_text)
+        justifications = extract_justifications(solution_text)
+
+        # Insérer les données dans la base
+        for i, question in enumerate(mcq_questions):
+            question_id = insert_question(conn, question["question"], 1, 2022, mcq_pdf_path)
+            for choice in question["choices"]:
+                reponse_id = insert_answer(conn, choice, mcq_pdf_path)
+                is_correct = (choice[0] == mcq_solutions.get(i + 1, "X"))
+                link_question_answer(conn, question_id, reponse_id, is_correct)
+
+            # Insérer les justifications et les articles
+            if i + 1 in justifications:
+                justification_id = insert_justification(conn, question_id, justifications[i + 1])
+                for article in extract_articles(justifications[i + 1]):
+                    article_id = insert_article(conn, article, "", "")
+                    link_justification_article(conn, justification_id, article_id)
+
+        print("✅ Données insérées avec succès.")
+
+    # Fermeture de la connexion
+    conn.close()
+else:
+    print("❌ Connexion MySQL impossible.")
