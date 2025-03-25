@@ -1,0 +1,280 @@
+Question 1
+Zlatko filed a European patent application EP-Z in Croatian as a first filing with the European Patent Office on 16 March 2023. EP-Z does not contain any claims.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: The period for paying the filing fee for EP-Z ended on 17 April 2023.
+
+Option 2: The period for filing an international patent application validly claiming priority from EP-Z ends on 16 March 2024.
+
+Option 3: The period for filing a translation of EP-Z into one of the official languages of the EPO ended on 16 May 2023.
+
+Option 4: The period for filing claims for EP-Z ended on 16 May 2023.
+
+
+
+Question 2
+Daniel Automotive SE filed a European patent application EP-D in June 2020. Claus is designated as the sole inventor. Last week, Daniel Automotive SE received a communication under Rule 71(3) EPC for EP-D. On 15 March 2024, an error is noted: the inventors of EP-D are actually Claus and Sabrina. Daniel Automotive SE now consults you for advice.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: ... the applicant need not provide evidence that an error was made.
+
+Option 2: … if the request is filed by Daniel Automotive SE, the consent of Claus is required to rectify the designation of the inventor.
+
+Option 3: ... the designation of the inventor may be corrected after EP-D has been granted.
+
+Option 4: ... Sabrina may file an opposition based on the ground of not being mentioned as inventor.
+
+
+
+Question 3
+Anna-Frieda filed a German national patent application DE-AF in German on 23 May 2022 disclosing a first invention AF1 and a second invention AF2. On 24 April 2023, Anna-Frieda filed a first European patent application EP-AF1 covering the invention AF1 only and claiming priority from DE-AF. On the same day, 24 April 2023, she also filed a second European patent application EP-AF2 covering the invention AF2 only and without claiming any priority. Afterwards, Anna-Frieda noticed that no drawings had been filed for EP-AF1 and that the wrong claims had been erroneously filed for EP-AF2. On 2 May 2023, Anna-Frieda filed the missing drawings for EP-AF1, together with a certified copy of DE-AF, a letter correctly stating that the missing drawings are identical to those of DE-AF and a request to maintain the filing date of 24 April 2023. On 2 May 2023, Anna-Frieda submitted the correct claims for EP-AF2.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: The filing date of EP-AF1 will be re-dated to 2 May 2023.
+
+Option 2: The filing date of EP-AF2 will be re-dated to 2 May 2023.
+
+Option 3: On 15 March 2024, Anna-Frieda can file a third EP patent application EP-AF3 validly claiming priority from EP-AF2 regarding the invention AF2.
+
+Option 4: The period for making the declaration of priority from DE-AF for EP-AF2 ends on 26 August 2024.
+
+
+
+Question 4
+Manuela filed international application PCT-M in September 2021 without claiming priority. PCT‑M was searched by the EPO as International Searching Authority in February 2022. The International Searching Authority raised non-unity objections with respect to the subject-matter of the claims, considering claims 20 to 35 to relate to a separate invention with respect to claims 1 to 19. Manuela did not pay any additional fees. The International Searching Authority issued a partial search report covering claims 1 to 19. PCT-M entered the European phase on 15 March 2024 and is referred to in the following as Euro-PCT-M. No amendments have been filed.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: Manuela will have an opportunity to amend the claims of Euro-PCT-M before substantive examination of Euro-PCT-M begins.
+
+Option 2: If in the application documents which are to serve as the basis of the substantive examination of Euro-PCT-M an invention is claimed that was not searched by the EPO as the International Searching Authority, Manuela will be invited to pay a further search fee in respect of this invention.
+
+Option 3: If Manuela does not pay claims fees by expiry of the period set by Rule  161 EPC, Euro-PCT-M will be deemed to be withdrawn.
+
+Option 4: If Manuela does not comment by 15 March 2024 on the written opinion of the International Searching Authority, Euro-PCT-M will be deemed to be withdrawn.
+
+
+
+Question 5
+Your client Pencilz has noticed that its biggest competitor Rulerz has a granted patent EP-R which covers important subject‑matter for Pencilz. The mention of the grant of EP-R was published in the European Patent Bulletin on 4 August 2023. Pencilz asked you to file an opposition against EP-R and the notice of opposition was filed on 15 February 2024. No opposition fee was paid. EP-R was opposed on the following grounds: added subject‑matter and lack of novelty. You also noticed some clarity issues with the granted claims of EP-R, which you also included in the statement of grounds filed with the notice of opposition.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: On 15 March 2024, the opposition fee may still be paid.
+
+Option 2: Lack of clarity is a ground for opposition.
+
+Option 3: The Opposition Division may, of its own motion, examine EP-R for sufficiency of disclosure.
+
+Option 4: A third-party that has filed observations with the EPO concerning the patentability of EP-R is party to the opposition proceedings.
+
+
+
+Question 6
+A European patent application is refused without holding oral proceedings for lack of novelty in a decision dated 1 February 2024. A request for oral proceedings filed by the applicant at an early stage in the examination procedure has been overlooked by the Examining Division. The applicant files an appeal with arguments explaining why the subject-matter claimed is novel over the prior art.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: If the Examining Division considers the appeal to be admissible and well‑founded, it shall rectify its decision.
+
+Option 2: The appeal fee is to be reimbursed in full because the applicant's request for oral proceedings has been overlooked.
+
+Option 3: If the notice of appeal does not contain the address of the appellant, and the address of the appellant is not given by today, 15 March 2024, the appeal will be rejected as inadmissible.
+
+Option 4: The statement setting out the grounds of appeal has to be filed within two months of filing the notice of appeal.
+
+
+
+Question 7
+On 1 June 2021, Matthieu filed a European patent application EP-M1 disclosing and claiming a fork made of copper or zinc. No other materials are mentioned and the kind of handle is not specified. On 1 June 2022, Matthieu filed a European patent application EP-M2 claiming priority from EP-M1 and disclosing and claiming a fork made of metal. The description of EP-M2 mentions that the metal can be copper, zinc, iron or any alloy of these metals. Claim 1 of EP-M2 claims a fork made of metal, claim 2 of EP-M2 claims a fork made of metal with a hollow handle. EP-M1 was published on 1 December 2022 as EP-M1-A1. A company brochure PA-1 published on 5 October 2021 discloses a fork made of copper with a hollow handle.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: PA-1 forms part of the state of the art against EP-M2 under Article 54(3) EPC.
+
+Option 2: EP-M1-A1 forms part of the state of the art against the subject-matter of claim 1 of EP-M2 under Article 54(3) EPC.
+
+Option 3: PA-1 is novelty-destroying for the subject-matter of claim 1 of EP-M2 under Article 54(2) EPC.
+
+Option 4: PA-1 is novelty-destroying for the subject-matter of claim 2 of EP-M2 under Article 54(2) EPC.
+
+
+
+Question 8
+On 28 February 2024, Martha, a Polish national resident in Poland, filed with the EPO a reasoned notice of opposition against European patent EP-E in Polish. The mention of the grant of EP-E was published in the European Patent Bulletin on 16 June 2023. The language of the proceedings in the case of EP-E is English. In the notice of opposition, Martha requested oral proceedings.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: Martha is not entitled to a reduction of the opposition fee.
+
+Option 2: Martha must file the translation of the notice of opposition at the latest on 18 March 2024.
+
+Option 3: If Martha requested in the notice of opposition to speak and listen in German during oral proceedings, the EPO would provide for interpretation.
+
+Option 4: Martha will be allowed to speak Polish during oral proceedings if she provides for interpretation into English.
+
+
+
+Question 9
+Sara, an Italian citizen living in Italy, filed an international application PCT-S1 in French with the EPO on 20 September 2021 without claiming priority. PCT-S1 documents as filed are: PCT request form designating all PCT contracting states, description, claims, drawings and abstract. After filing, Sara noticed that her name was misspelt on the PCT request form, but she could still be identified.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: 20 September 2021 is the international filing date of PCT-S1.
+
+Option 2: Without resorting to a legal remedy, the acts for entry into the EP regional phase shall be performed at the latest on 20 March 2024.
+
+Option 3: An extension of the time limit for performing the requirements for entry into the EP regional phase can be validly requested on 20 February 2024.
+
+Option 4: Further processing for performing the requirements for entry into the EP regional phase can be validly requested on 19 June 2024.
+
+
+
+Question 10
+Wolfgang intends to file the following patent applications:(1) a European patent application EP-W;(2) an international patent application PCT-WC.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: Wolfgang may validly file EP-W with the EPO.
+
+Option 2: PCT-WC may be validly filed with the EPO as receiving Office.
+
+Option 3: PCT-WC can be validly filed with the International Bureau as receiving Office.
+
+Option 4: If Wolfgang moves to Berlin two months after validly filing PCT-WC, the International Bureau will, upon request, record the change of residence in relation to PCT-WC.
+
+
+
+Question 11
+Assume that claims I.1 and I.2 are the only claims filed with the client's patent application.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: The electronic cigarette of the first embodiment of the application is covered by the scope of claim I.1.
+
+Option 2: The electronic cigarette of the second embodiment of the application is covered by the scope of claim I.2.
+
+Option 3: The electronic cigarette of the third embodiment of the application is covered by the scope of claim I.1.
+
+Option 4: The electronic cigarette of the fourth embodiment of the application is covered by the scope of claim I.2.
+
+
+
+Question 12
+Assume that claims I.1 and I.2 are the only claims filed with the client's patent application.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: The electronic cigarette in D1 reads information that can prevent the unauthorised use of disposable cartridges.
+
+Option 2: The subject-matter of claim I.1 is novel with respect to D1.
+
+Option 3: The subject-matter of claim I.2 is novel with respect to D1.
+
+Option 4: D1 discloses an electronic cigarette that provides a liquid solution to avoid the health risks caused by high nicotine concentrations.
+
+
+
+Question 13
+This questions relates to Document D2 (available via the hyperlink above the statements).
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: D2 discloses a mobile app to detect health risks caused by the mixture of components for a liquid solution for electronic cigarettes.
+
+Option 2: The range of nicotine values ranging from 0 mg/ml to 20 mg/ml disclosed in paragraph [013] of the application is novel over D2.
+
+Option 3: D2 discloses an electronic cigarette with a communication component configured to read information from an RFID tag to validate a liquid container.
+
+Option 4: D2 discloses a liquid solution that comprises further chemical substances in addition to flavouring.
+
+
+
+Question 14
+II.1I.1An electronic cigarette (100) comprising a liquid container (130), an atomiser (120) in connection with the liquid container (130)and a mouthpiece (110) through which the user draws vapour produced by the atomiser (120), a battery (150), a push‑button (160), a communication component (170) and a controller (140)for activating or deactivating vapour production of the electronic cigarette (100)being connected to each of the battery (150), the atomiser (120), the push‑button (160) and the communication component (170),wherein, when the controller (140) receives a signal caused by the user pressing the push-button, the controller activates vapour production by supplying power from the battery (150) to the atomiser (120),wherein the atomiser transforms, by heating, the liquid held in the liquid container (130) into vapour to be inhaled by the user through the mouthpiece (110).I.2The electronic cigarette of claim I.1, wherein a time schedule for the vapour production is received from a mobile phone (190) through the communication component (170).II.2The electronic cigarette of claim II.1, wherein a fingerprint sensor (210) transmits identified key markers of the user's fingerprints to a software application in a mobile phone.II.3The electronic cigarette of claim II.1, wherein a short-range communication signal allows the activation of vapour production.II.4The electronic cigarette of claim II.1, wherein a pressure sensor (310) replaces the push‑button (160) and the pressure sensor (310) sends a signal to the controller (140) representing a pressure difference for producing vapour.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: Claim II.1 meets the requirements of Article 123(2) EPC.
+
+Option 2: Claim II.2 meets the requirements of Article 123(2) EPC.
+
+Option 3: Claim II.3 meets the requirements of Article 123(2) EPC.
+
+Option 4: Claim II.4 meets the requirements of Article 123(2) EPC.
+
+
+
+Question 15
+Considering the disclosure of documents D1 and D2 and the claims below, for each of the statements, indicate whether the statement is true or false:Assume that claims III.1-3 were originally filed:III.1 An electronic cigarette (100) comprising a liquid container (130) comprising a secured electronic identification tag (510), a communication component (170) for reading the secured electronic identification tag (510) and a controller (140) configured to allow or prevent activation of vapour production of the electronic cigarette (100) on the basis of authentication of the secured electronic identification tag (510) to validate the liquid container (130).III.2 An electronic cigarette (100) comprising a liquid container (130) comprising a secured electronic identification tag (510), a short-range communication component (170) for reading the secured electronic identification tag (510) and a controller (140) configured to allow or prevent activation of vapour production of the electronic cigarette (100) on the basis of authentication of the secured electronic identification tag (510), wherein the liquid container (130) contains smoking liquid comprising flavouring and a therapeutic drug.III.3 A method of using an electronic cigarette (100) comprising a liquid container (130) comprising a secured electronic identification tag (510), a short-range communication component (170) for reading the secured electronic identification tag (510) and a controller (140) configured to allow or prevent activation of vapour production of the electronic cigarette (100), wherein the controller (140) supplies electric power for the vapour production upon detecting a pressure difference when inhaling from a mouthpiece in the electronic cigarette (100).
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: The subject-matter of claim III.1 is novel over D1.
+
+Option 2: The subject-matter of claim III.2 is novel over D1.
+
+Option 3: The subject-matter of claim III.2 is excluded from patentability.
+
+Option 4: The subject-matter of claim III.3 involves an inventive step in view of the disclosure of D1 as the closest prior art and D2.
+
+
+
+Question 16
+Claim set I filed together with the descriptionI.1 Product X for use in a treatment as an antiviral, an antibiotic, an antifungal or an antiparasitic.I.2 Product X for use in a treatment by inhibiting receptor Y.I.3 Product X according to claim I.1, wherein the treatment is antiviral, more particularly a treatment against rhinovirus, influenza virus or coronavirus.I.4 Product X according to claim I.1, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.I.5 Product X, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.I.6 Product X according to claim I.5, wherein Product X is administered for at least 10 days in a dosage of 25 mg/kg bodyweight per day.I.7 Product X according to claim I.1, wherein Product X is administered as nasal spray.I.8 Product X according to claim I.1, wherein the treatment is an antibiotic and wherein Product X is administered as nasal spray.I.9. A method for therapeutic treatment of a living human, wherein the treatment comprises administration of Product X.I.10 The method according to claim I.9, wherein the treatment comprises intravenous administration.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: The usage of Product X as an antifungal is sufficiently disclosed by the application as filed.
+
+Option 2: The subject-matter of claim I.1 is sufficiently disclosed by the application as filed.
+
+Option 3: The usage of Product X as an antibiotic is sufficiently disclosed by the application as filed.
+
+Option 4: The EPO will issue a communication according to Rule 63 EPC because the claim set comprises a plurality of independent claims of the same category.
+
+
+
+Question 17
+Claim set I filed together with the descriptionI.1 Product X for use in a treatment as an antiviral, an antibiotic, an antifungal or an antiparasitic.I.2 Product X for use in a treatment by inhibiting receptor Y.I.3 Product X according to claim I.1, wherein the treatment is antiviral, more particularly a treatment against rhinovirus, influenza virus or coronavirus.I.4 Product X according to claim I.1, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.I.5 Product X, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.I.6 Product X according to claim I.5, wherein Product X is administered for at least 10 days in a dosage of 25 mg/kg bodyweight per day.I.7 Product X according to claim I.1, wherein Product X is administered as nasal spray.I.8 Product X according to claim I.1, wherein the treatment is an antibiotic and wherein Product X is administered as nasal spray.I.9. A method for therapeutic treatment of a living human, wherein the treatment comprises administration of Product X.I.10 The method according to claim I.9, wherein the treatment comprises intravenous administration.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: Claim I.9 is excluded from patentability because it relates to a method which encompasses at least one therapeutic step.
+
+Option 2: Claim I.3 is limited to the treatment of rhinoviruses, influenza viruses and coronaviruses by Product X.
+
+Option 3: There is a basis in the application as filed, so that claim I.5 can be amended compliant to Article 123(2) EPC in a way that the resulting subject-matter also covers administering Product X for seven days.
+
+Option 4: The subject-matter of claim I.4 is unclear because the essential feature of administration via nasal spray is missing.
+
+
+
+Question 18
+Claim set I filed together with the descriptionI.1 Product X for use in a treatment as an antiviral, an antibiotic, an antifungal or an antiparasitic.I.2 Product X for use in a treatment by inhibiting receptor Y.I.3 Product X according to claim I.1, wherein the treatment is antiviral, more particularly a treatment against rhinovirus, influenza virus or coronavirus.I.4 Product X according to claim I.1, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.I.5 Product X, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.I.6 Product X according to claim I.5, wherein Product X is administered for at least 10 days in a dosage of 25 mg/kg bodyweight per day.I.7 Product X according to claim I.1, wherein Product X is administered as nasal spray.I.8 Product X according to claim I.1, wherein the treatment is an antibiotic and wherein Product X is administered as nasal spray.I.9. A method for therapeutic treatment of a living human, wherein the treatment comprises administration of Product X.I.10 The method according to claim I.9, wherein the treatment comprises intravenous administration.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: The subject-matter of claim I.1 is not novel over D1.
+
+Option 2: The subject-matter of claim I.5 is not novel over D1.
+
+Option 3: The subject-matter of claim I.7 is not novel over D2.
+
+Option 4: The subject-matter of claim I.1 is not novel over D3.
+
+
+
+Question 19
+Claim set I filed together with the descriptionI.1 Product X for use in a treatment as an antiviral, an antibiotic, an antifungal or an antiparasitic.I.2 Product X for use in a treatment by inhibiting receptor Y.I.3 Product X according to claim I.1, wherein the treatment is antiviral, more particularly a treatment against rhinovirus, influenza virus or coronavirus.I.4 Product X according to claim I.1, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.I.5 Product X, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.I.6 Product X according to claim I.5, wherein Product X is administered for at least 10 days in a dosage of 25 mg/kg bodyweight per day.I.7 Product X according to claim I.1, wherein Product X is administered as nasal spray.I.8 Product X according to claim I.1, wherein the treatment is an antibiotic and wherein Product X is administered as nasal spray.I.9. A method for therapeutic treatment of a living human, wherein the treatment comprises administration of Product X.I.10 The method according to claim I.9, wherein the treatment comprises intravenous administration.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: The subject-matter of claim I.1 involves an inventive step over D3 alone.
+
+Option 2: For the following statement, assume that D1 is regarded as the closest prior art to the subject-matter of claim I.3: A valid argument that the subject-matter of claim I.3 involves an inventive step over D1 is that there is no hint in any one of documents D1, D2 and D3 that Product X has an antiviral effect.
+
+Option 3: The subject-matter of claim I.6 is novel over D1.
+
+Option 4: The difference of the subject-matter of claim I.8 over D3 as closest prior art may be regarded as not providing a technical effect.
+
+
+
+Question 20
+Claim set II filed by the applicant during the examination proceedingsDeleted passages are marked as “strikethrough”, added passages areunderlined.II.1I.1Product X for use in a treatment as an antiviral, an antibiotic , an antifungal or an antiparasitic.I.2 Product X for use in a treatment by inhibiting receptor Y.II.2 Product X according to claim II.1, wherein the treatment is antiviral against RNA viruses.II.3I.3Product X according to claimII.1I.1, wherein the treatment isan antiviral, more particularlya treatment against rhinovirus, influenza virus or coronavirus.II.4I.4Product X according to claimII.1I.1, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.II.5. Product X according to claim II.1, wherein Product X is administered for at least 10 days in a dosage of 5-30 mg/kg bodyweight per day.II.6I.5Product X, wherein Product X is administered for at least 10 days in a dosage of 5-50 mg/kg bodyweight per day.II.7I.6Product X according to claimII.6I.5, wherein Product X is administered for at least 10 days in a dosage of 25 mg/kg bodyweight per day.II.8I.7Product X according to claimII.1I.1, wherein Product X is administered as nasal spray.II.9I.8Product X according to claimII.1I.1, wherein the treatment is an antibiotic and wherein Product X is administered as nasal spray.II.10 A composition comprising Product X and antibiotic compound Z.I.9. A method for therapeutic treatment of a living human, wherein the treatment comprises administration of Product X.I.10 A method according to claim I.9, wherein the treatment comprises intravenous administration.
+For each of the statements, indicate whether the statement is true (T) or false (F):
+
+Option 1: The subject-matter of claim II.2 complies with the requirements of Article 123(2) EPC.
+
+Option 2: The subject-matter of claim II.5 complies with the requirements of Article 123(2) EPC.
+
+Option 3: The subject-matter of claim II.10 complies with the requirements of Article 123(2) EPC.
+
+Option 4: The effect provided by the distinguishing features of the subject-matter of claim II.10 with respect to D3 is a synergistic effect.
+
+
+

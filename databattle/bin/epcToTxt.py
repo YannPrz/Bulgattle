@@ -54,7 +54,7 @@ def extract_EPC_txt(pdf_path: str, txt_output: str, nStart: int, nEnd: int):
 					match = re.search(r'^[^a-zA-Z\n]*[a-zA-Z]', text)
 					if match != None:
 
-						text = match.group(0)
+						text = match.group(1)
 						
 					else:
 						text = re.sub(r'^.*?\n', str(c) + " ", text, count=1)

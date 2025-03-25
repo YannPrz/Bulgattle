@@ -11,7 +11,7 @@ The grant of a European patent may be requested for one or more of the Contracti
 (a)  the European Patent Office;
 (b)  the Administrative Council.
 (3)  The task of the Organisation shall be to  grant European patents. This shall be carried  out by the European Patent Office supervised  by the Administrative Council.
-4a
+4a Conference of ministers of the Contracting States
 A conference of ministers of the Contracting  States responsible for patent matters shall meet  at least every five years to discuss issues pertaining to the Organisation and to the European  patent system.
 
 5 Legal status
@@ -465,14 +465,14 @@ If the European patent is maintained as  amended under Article 101, paragraph 3(
 (a)  proceedings for infringement of the same  patent have been instituted against him, or
 (b)  following a request of the proprietor of the  patent to cease alleged infringement, the third  party has instituted proceedings for a ruling that  he is not infringing the patent.
 (2)  An admissible intervention shall be  treated as an opposition.
-105a
+105a Request for limitation or revocation
 (1)  At the request of the proprietor, the European patent may be revoked or be limited by an  amendment of the claims. The request shall be  filed with the European Patent Office in accordance with the Implementing Regulations. It  shall not be deemed to have been filed until the  limitation or revocation fee has been paid.
 (2)  The request may not be filed while opposition proceedings in respect of the European  patent are pending.
-105b
+105b Limitation or revocation of the European patent
 (1)  The European Patent Office shall examine whether the requirements laid down in the  Implementing Regulations for limiting or revoking the European patent have been met.
 (2)  If the European Patent Office considers  that the request for limitation or revocation of  the European patent meets these requirements, it shall decide to limit or revoke the European  patent in accordance with the Implementing  Regulations. Otherwise, it shall reject the  request.
 (3)  The decision to limit or revoke the European patent shall apply to the European patent  in all the Contracting States in respect of which  it has been granted. It shall take effect on the  date on which the mention of the decision is  published in the European Patent Bulletin.
-105c
+105c Publication of the amended specification of the European patent
 If the European patent is limited under  Article 105b, paragraph 2, the European Patent  Office shall publish the amended specification  of the European patent as soon as possible  after the mention of the limitation has been  published in the European Patent Bulletin.
 
 106 Decisions subject to appeal
@@ -497,7 +497,7 @@ If the appeal is admissible, the Board of Appeal  shall examine whether the appe
 (b)  the President of the European Patent  Office may refer a point of law to the Enlarged  Board of Appeal where two Boards of Appeal  have given different decisions on that question.
 (2)  In the cases referred to in paragraph 1(a) the parties to the appeal proceedings shall be  parties to the proceedings before the Enlarged  Board of Appeal.
 (3)  The decision of the Enlarged Board of  Appeal referred to in paragraph 1(a) shall be  binding on the Board of Appeal in respect of the  appeal in question.
-112a
+112a Petition for review by the Enlarged Board of Appeal
 (1)  Any  party  to  appeal  proceedings  adversely affected by the decision of the Board  of Appeal may file a petition for review of the  decision by the Enlarged Board of Appeal.
 (2)  The petition may only be filed on the  grounds that:
 (a)  a member of the Board of Appeal took  part in the decision in breach of Article 24,  paragraph 1, or despite being excluded pursuant to a decision under Article 24, paragraph 4;
@@ -616,7 +616,7 @@ may be entered on the list of professional representatives.
 (a)  the requirement of paragraphs 2(a) or  3(a) in special circumstances;
 (b)  the requirement of paragraph 3(c), second sentence, if the applicant furnishes proof  that he has acquired the requisite qualification  in another way.
 (8)  Representation in proceedings established by this Convention may also be undertaken, in the same way as by a professional  representative, by any legal practitioner qualified in a Contracting State and having his place  of business in that State, to the extent that he is  entitled in that State to act as a professional  representative in patent matters. Paragraph 6 shall apply mutatis mutandis.
-134a
+134a Institute of Professional Representatives before the European Patent Office
 (1)  The Administrative Council shall be competent to adopt and amend provisions governing:
 (a)161 the Institute of Professional Representatives before the European Patent Office, hereinafter referred to as the Institute;
 (b)  the qualifications and training required of  a person for admission to the European qualifying examination and the conduct of such  examination;162
@@ -681,7 +681,7 @@ If the group of Contracting States has fixed a  common scale of renewal fees in 
 149 Joint designation
 (1)  The group of Contracting States may provide that these States may only be designated  jointly, and that the designation of one or some  only of such States shall be deemed to constitute the designation of all the States of the  group.
 (2)  Where the European Patent Office acts  as a designated Office under Article 153, paragraph 1, paragraph 1 shall apply if the applicant  has indicated in the international application  that he wishes to obtain a European patent for  one or more of the designated States of the  group. The same shall apply if the applicant  designates in the international application one  of the Contracting States in the group, whose  national law provides that the designation of  that State shall have the effect of the application being for a European patent.
-149a
+149a Other agreements between the Contracting States
 (1)  Nothing in this Convention shall be construed as limiting the right of some or all of the  Contracting States to conclude special agreements on any matters concerning European  patent applications or European patents which  under this Convention are subject to and governed by national law, such as, in particular
 (a)  an agreement establishing a European  patent court common to the Contracting States  party to it;
 (b)  an agreement establishing an entity common to the Contracting States party to it to  deliver, at the request of national courts or  quasi-judicial authorities, opinions on issues of  European or harmonised national patent law;

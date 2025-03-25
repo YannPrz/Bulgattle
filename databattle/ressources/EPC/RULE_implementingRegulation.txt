@@ -30,7 +30,6 @@ Where the translation of a document is  required, the European Patent Office may
 7 Legal authenticity of the translation of the  European patent application
 Unless evidence is provided to the contrary, the  European Patent Office shall assume, for the  purpose of determining whether the subjectmatter of the European patent application or  European patent extends beyond the content of  the application as filed, that the translation filed  under Article 14, paragraph 2, or Rule 40, paragraph 3, is in conformity with the original text of  the application.
 
-Section 1   General matters
 8 Patent classification
 The European Patent Office shall use the  classification referred to in Article 1 of the  Strasbourg  Agreement  concerning  the  International Patent Classification of 24 March  1971, hereinafter referred to as the international  classification.
 9 Administrative structure of the European  Patent Office
@@ -45,7 +44,6 @@ The European Patent Office shall use the  classification referred to in Article 
 (1)  Technically qualified examiners acting as  members of Search, Examining or Opposition  Divisions shall be assigned to Directorates. The  President of the European Patent Office shall  allocate duties to these Directorates by reference to the international classification.
 (2)8 The President of the European Patent  Office may allocate further duties to the  Receiving Section, the Search, Examining and  Opposition Divisions, and the Legal Division, in  addition to the responsibilities vested in them  under the Convention.
 (3)9 The President of the European Patent  Office may entrust to employees who are not  technically or legally qualified examiners the  execution of duties falling to the Search, Examining or Opposition Divisions and involving no  technical or legal difficulties.
-Section 2   Organisation of the Boards of Appeal and  the Enlarged Board of Appeal
 1210
 (deleted)
 12a
