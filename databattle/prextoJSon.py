@@ -57,6 +57,7 @@ def prexToToJsonOption(destTxt,destjsonl):
 		with open(destjsonl,"w",encoding="utf-8") as fjason :
 			for donnee in listeDictionnaire:
 				fjason.write(json.dumps(donnee, ensure_ascii=False) + "\n")
+## Je ne sais plus si ce truc sert à quelque chose 
 
 def prexToToJsonNum(destTxt,destjsonl):
 	with open (destTxt,"r",encoding="utf-8")as f:
@@ -122,7 +123,6 @@ def ecritDict(dictionnaire,text,type,num):
 		s="Answer"
 	dictionnaire[s+str(num)]=text
 
-## Je ne sais plus si ce truc sert à quelque chose 
 def ArtTxtToJson(destTxt,destjsonl):
 	with open (destTxt,"r",encoding="utf-8")as f:
 		numArticle=""
