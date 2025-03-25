@@ -122,7 +122,7 @@ def ecritDict(dictionnaire,text,type,num):
 		s="Answer"
 	dictionnaire[s+str(num)]=text
 
-## a changé num article à récupérer directement dans le doc le faire à la mano ne fonctinne pas +comprendre pk il y a toujours ces ptn de sous article à chaque fois
+## Je ne sais plus si ce truc sert à quelque chose 
 def ArtTxtToJson(destTxt,destjsonl):
 	with open (destTxt,"r",encoding="utf-8")as f:
 		numArticle=""
