@@ -1,0 +1,12 @@
+flask
+flask-cors
+requests
+chromadb
+scikit-learn
+sentence-transformers
+langchain
+langchain-community
+langchain-huggingface
+langchain-chroma
+sentencepiece
+sacremoses
