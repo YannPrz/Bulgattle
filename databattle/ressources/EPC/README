@@ -1,0 +1,16 @@
+Nom des fichier :
+	ART = articles
+	RULE = régles
+	SECTION = sections
+
+Format : 
+	[Nombre] + [espace] + [Texte] : nombre = numéro de l'article/régles/section ; texte = titre de l'article/régles/section (Lorsqu'il y du texte')
+	[(Nombre) / (lettre)] : Sous partie correspondante
+	[Nombre] + [Parfois Lettre]+ "." +[Texte] : Sous sous partie correspondante (Majoritairement dans le fichier "ART_rules_Fees.txt")
+	1 ligne = 1 paragraphe
+
+
+Bug connu : 
+	Si le contenue de l'article commence par article l'automatisation ne fonctionne pas (bcp ont été corrigé manuellement) 
+	Si dans le numéro d'un article il y a une lettre le nom de l'article n'est pas ajouté (pas eu le temps de corriger manuellement)'
+	'
