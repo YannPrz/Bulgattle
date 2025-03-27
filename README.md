@@ -1,6 +1,6 @@
 # Chatbot Bulgattle
 
-Ce projet implémente un chatbot basé sur Flask, utilisant une interface web pour interagir avec les utilisateurs. Il est développé dans le cadre de l'application **Bulgattle**.
+Ce projet implémente un chatbot juridique spécialisé en droit des brevets européens. Il repose sur un modèle de génération de texte (LLM) assisté par un système de récupération d'informations (RAG) basé sur ChromaDB. L'API est développée avec Flask, et une interface web permet d'interagir avec le chatbot.
 
 ## Prérequis
 
