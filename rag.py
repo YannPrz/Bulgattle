@@ -6,7 +6,6 @@ import random
 import re
 import requests
 from transformers import pipeline
-from langchain.schema import Document
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
@@ -38,21 +37,30 @@ Be legally accurate
 Not generate unnecessary repetitions or hallucinations
 """
 
-# --- TRADUCTION (initialisation des pipelines une seule fois) ---
+# --- INITIALISATION DES PIPELINES DE TRADUCTION ---
 translator_fr = pipeline("translation", model="Helsinki-NLP/opus-mt-en-fr")
 translator_en = pipeline("translation", model="Helsinki-NLP/opus-mt-fr-en")
 
 def traduire(text, target="fr", chunk_size=450):
-    model_name = "Helsinki-NLP/opus-mt-en-fr" if target == "fr" else "Helsinki-NLP/opus-mt-fr-en"
-    translator = pipeline("translation", model=model_name)
+    # Utilisation du pipeline déjà initialisé pour la traduction
+    if target == "fr":
+        translator = translator_fr
+    else:
+        translator = translator_en
+
+    # Découpe du texte en morceaux si nécessaire
     chunks = [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
     translated = []
+
+    # Traduction par morceaux
     for chunk in chunks:
         translated_text = translator(chunk, max_length=512)[0]["translation_text"]
         translated.append(translated_text)
+
     return " ".join(translated)
 
-# === CHARGEMENT DES DOCUMENTS POUR LE RAG ===
+
+# === CHARGEMENT DES DOCUMENTS POUR LE RAG ===  (en fonction des fichiers sources, les jsonl n'ont pas été formatés avec les même mot clés et de la même façon d'ou le grand nombre de fonction pour extraire les données)
 def load_jsonl_lines(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         return [json.loads(line) for line in f if line.strip()]
@@ -136,6 +144,7 @@ def load_all_docs():
     docs += extract_pre_exam("./donnees/Pre-Exam_output.jsonl")
     return docs
 
+# Texte parasite dans les réponses du modèle à certain moment. On a pas eu le temps de vérifier si cela venait plus de notre découpage des réponses ou du modèle lui même. Solution temporaire pour nettoyer les réponses par manque de temps.
 def nettoyer_reponse_ia(texte):
     match = re.search(r"(Answer:|Comment:)", texte, re.IGNORECASE)
     if match:
@@ -148,14 +157,17 @@ print(f"{len(context_chunks)} documents chargés.")
 
 print("Création des embeddings...")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
+#utilisation d'une bdd vectorielle pour stocker nos données et rendre les recherches plus rapides
 vectordb = Chroma.from_texts(context_chunks, embedding=embedding_model, persist_directory="epac_chroma_db")
-retriever = vectordb.as_retriever()
+retriever = vectordb.as_retriever() #transforme notre bdd en un objet retriever permettant de faire des recherches de documents en fonction de la question posée cherchant les documents les plus proches de la question posée
 print("Base vectorielle prête.")
 
-app = Flask(__name__, static_folder="static")
-CORS(app)
+app = Flask(__name__, static_folder="static") #initialisation de l'application flask
+CORS(app) 
 
 def appeler_llm(prompt):
+    # Appel de l'API Scaleway qui héberge notre modèle de langage
     headers = {
         "Authorization": f"Bearer {SCW_API_KEY}",
         "Content-Type": "application/json"
@@ -175,10 +187,12 @@ def appeler_llm(prompt):
     except Exception as e:
         return f"Error: {e} – {response.text}"
 
+# Fonction pour récupérer le contexte des documents les plus proches de la question posée
 def get_context(question):
     docs = retriever.invoke(question)
     return "\n\n".join(d.page_content for d in docs)
 
+# Fonction pour poser une question à notre modèle de langage en associant le contexte des documents les plus proches de la question posée
 def rag_with_llm(question):
     context = get_context(question)
     full_prompt = f"Context:\n{context}\n\nQuestion:\n{question}"
@@ -208,6 +222,7 @@ Can you explain why this answer is correct? Support your explanation with legal 
 """
     return rag_with_llm(p)
 
+# on récupère une question aléatoire dans notre base de questions et on la traduit si besoin
 @app.route("/training", methods=["GET"])
 def training():
     lang = request.args.get("lang", "en")
@@ -225,6 +240,7 @@ def training():
         "choices": choices
     })
 
+# on récupère la réponse à la question posée par l'utilisateur et on vérifie si elle est correcte ou non et fournir une explication
 @app.route("/training_answer", methods=["POST"])
 def training_answer():
     data = request.json
@@ -246,6 +262,7 @@ def training_answer():
         "explanation": explanation
     })
 
+# on pose une question à notre modèle de langage et on récupère la réponse
 @app.route("/ask", methods=["POST"])
 def ask():
     data = request.json
