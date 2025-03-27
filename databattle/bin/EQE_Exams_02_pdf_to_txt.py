@@ -53,6 +53,8 @@ def extract_text_from_pdf_PaperD_answers(pdf_path: str) -> str:
         page_text = re.sub(r"(\n\d+\.)\s*\n+", r"\1 ", page_text)  
         page_text = re.sub(r"(Answer to Question \d+):\s*", r"\1\n", page_text)
         page_text = re.sub(r"(Question \d+)\.\s*", r"\1\n", page_text)
+        page_text = re.sub(r"Possible Solution – Paper D \d{4}, Part [IVXLCDM]+\s*\n", "", page_text)
+
 
         #2021
         page_text = re.sub(r"- \d+ - ", r"", page_text)  
@@ -114,17 +116,22 @@ def extract_text_from_pdf_PaperD_questions(pdf_path: str) -> str:
         page_text = re.sub(r"\s*\n?", '• ', page_text)
         page_text = re.sub(r"Paper D2\s*\nThis paper comprises:", '', page_text)   
         page_text = re.sub(r"\(\d+\s*marks\)", r"", page_text)
+        page_text = re.sub(r"Part II: Legal Opinion\s*\n", r"", page_text)
         
         #2023
         page_text = re.sub(r"\(\d+\s*points\)", r"", page_text)
         page_text = re.sub(r"\n\d-\d", r"", page_text)
         page_text = re.sub(r"\d{4}/D/EN/\d+\n", '', page_text)
         page_text = re.sub(r"━\s*\n?", '- ', page_text)
+        page_text = re.sub(r"^Questions:\s*\n", '', page_text)
+        page_text = re.sub(r"\n(\d+)\)", r'\n\1.', page_text)
+        page_text = re.sub(r"\n\((\d+)\)", r'\n\1.', page_text)
 
         #2022
         page_text = re.sub(r"\d{4}/D/EN\n", '', page_text)
 
         #2021
+        page_text = re.sub(r"• (Questions 1-4)\s*50 points", r"\1", page_text)
         page_text = re.sub(r"\d{4}/D2/EN\n", '', page_text)
         page_text = re.sub(r"\d{4}/D2/EN/\d+\n", '', page_text)
         
@@ -177,7 +184,7 @@ def extract_text_from_pdf_PaperD_questions_D11_D12(pdf_path: str) -> str:
 
         #2021D1-2
         page_text = re.sub(r"\d{4}/D1-2/EN/\d+\n", '', page_text)
-        page_text = re.sub(r" \s*", ' ', page_text)
+        page_text = re.sub(r"\n\((\d+)\)", r'\n\1.', page_text)
 
         full_text += page_text 
             
@@ -185,8 +192,14 @@ def extract_text_from_pdf_PaperD_questions_D11_D12(pdf_path: str) -> str:
     questions = re.findall(pattern, full_text, flags=re.DOTALL)
     full_text = "\n\n\n\n".join(questions)
 
-    #2024D1-2
-    full_text = re.sub(r"\(([a-zA-Z])\)\s*\n", r"(\1) ", full_text, flags=re.DOTALL)
+    #2021D1-2
+    full_text = re.sub(r"(\n\([a-z]\))\s*\n", r"\n\1 ", full_text, flags=re.DOTALL)
+    
+    #2021D1-1
+    full_text = re.sub(r"(\n\d+\.)\s*", r"\n\1 ", full_text, flags=re.DOTALL)
+
+    #2021D1-2
+    full_text = re.sub(r"(?<!\n)(\n\([a-z]\))", r"\n\1", full_text, flags=re.DOTALL)
     
     return full_text
 

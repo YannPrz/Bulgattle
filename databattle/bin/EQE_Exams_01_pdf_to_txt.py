@@ -46,9 +46,11 @@ def extract_text_from_pdf_PreEx_answers(pdf_path: str) -> str:
         page_text = re.sub(r'(?m)^\s+\n', '', page_text)
         page_text = re.sub(r"^\d+ \n", '', page_text)    
         page_text = re.sub(r"^Examiners’ Report Pre-examination \d{4} \n", '', page_text)
-        page_text = re.sub(r"PART \d+ \n", '', page_text)    
+        page_text = re.sub(r"PART \d+\s*\n", '', page_text)    
         page_text = re.sub(r"(\n\d+\.\d+)\s*\n+", r"\1 ", page_text)
-        page_text = re.sub(r"(\n\d+\.\d+)", r"\n\1 ", page_text)
+        page_text = re.sub(r"(\n\d+\.\d+) \s*", r"\n\1 ", page_text)
+        page_text = re.sub(r"(\n\d+\.\d+)\s*-\s*", r"\1 ", page_text)
+        page_text = re.sub(r"(\n\d+\.\d+)\s*–\s*", r"\1 ", page_text)
 
         #2023
         page_text = re.sub(r"(TRUE:)\s*\n", r"\1 ", page_text)
@@ -60,12 +62,16 @@ def extract_text_from_pdf_PreEx_answers(pdf_path: str) -> str:
 
         #2019
         page_text = re.sub(r"\d+ of \d+\n", '', page_text)  
+        page_text = re.sub(r"(?<![\n])(Question \d+)\s*", r"\n\1\n", page_text)   
         page_text = re.sub(r"QUESTION (\d+)\s*\n", r"Question \1 \n", page_text)   
+        page_text = re.sub(r"QUESTION (\d+):\s*\n", r"Question \1 \n", page_text)   
+
+        page_text = re.sub(r"- \d+ -\s*\n", "", page_text)   
 
         full_text += page_text 
         
     # Extract questions
-    pattern = r'(?mi)Question \d+\s*.*?(?=\nQuestion \d+|\Z)'
+    pattern = r'(?m)Question \d+\s*\n.*?(?=\nQuestion \d+\s*\n|\Z)'
     questions = re.findall(pattern, full_text, flags=re.DOTALL)
     full_text = "\n\n\n\n".join(questions)
 
@@ -77,6 +83,9 @@ def extract_text_from_pdf_PreEx_answers(pdf_path: str) -> str:
     full_text = re.sub(r'WAHR:.*?(\n\d+\.\d+|\n\n\nQuestion \d+ )', r'\1', full_text, flags=re.DOTALL)
     full_text = re.sub(r'FALSCH:.*?(\n\d+\.\d+|\n\n\nQuestion \d+ )', r'\1', full_text, flags=re.DOTALL)
     full_text = re.sub(r'WAHR:.*?.*', '', full_text, flags=re.DOTALL)
+
+    full_text = re.sub(r"(\n\d+\.\d+)\s*\n+", r"\1 ", full_text, flags=re.DOTALL)
+    
 
     return full_text
 
@@ -101,14 +110,26 @@ def extract_text_from_pdf_PreEx_questions(pdf_path: str) -> str:
 
         # Cleaning patterns for different years
         #2022
+        page_text = re.sub(r"(\nQuestion \d+):", r"\1", page_text)   
+
         page_text = re.sub(r'(?m)^\s+\n', '', page_text)
         page_text = re.sub(r"^\d+ \n", '', page_text)    
         page_text = re.sub(r"\d{4}/P/EN\n", '', page_text)
         page_text = re.sub(r"Page \d+ of \d+\n", '', page_text) 
         page_text = re.sub(r"(\n\d+\.\d+)\s*\n+", r"\1 ", page_text)
+        page_text = re.sub(r"Part \d+\s*\n", '', page_text)
+        page_text = re.sub(r"-\n", r"", page_text)
+        
+        #2021
+        page_text = re.sub(r"\d{4}/P/EN/\d+\s*\n", '', page_text)
+        
 
-        #2018
-        page_text = re.sub(r"(Question \d+ )", r"\1", page_text)
+        #2019
+        page_text = re.sub(r"Legal questions\s*\n", "", page_text)
+        page_text = re.sub(r"\n\d{4}/P/EN/\d+", '', page_text)
+        page_text = re.sub(r"^Claims analysis\s*\n", "", page_text)
+        page_text = re.sub(r"^Claim analysis\s*\n", "", page_text)
+
 
         #2016
         page_text = re.sub(r"Page \d+ of \d+ \n", '', page_text) 
@@ -120,48 +141,40 @@ def extract_text_from_pdf_PreEx_questions(pdf_path: str) -> str:
         full_text += page_text 
         
     # Extract questions
-    pattern = r'(?mi)Question \d+\s*.*?(?=\nQuestion \d+|\Z)'
+    pattern = r'(?m)Question \d+\s*\n.*?(?=\nQuestion \d+\s*\n|\Z)'
     questions = re.findall(pattern, full_text, flags=re.DOTALL)
     full_text = "\n\n\n\n".join(questions)
 
     # Additional cleaning
     #2022
-    full_text = re.sub(r"Question (\d+)\s*\n", r"Question \1\n", full_text, flags=re.DOTALL)
     full_text = re.sub(r"(\n\d+\.\d+)\s*", r"\n\1 ", full_text, flags=re.DOTALL)
-    full_text = re.sub(r"-\n", r"", full_text, flags=re.DOTALL)
-    full_text = re.sub(r"Part \d+\s*\n", '', full_text, flags=re.DOTALL)
     
-
     #2021
     full_text = re.sub(r"(?<!\n)(For each of the statements)", r"\n\1", full_text, flags=re.DOTALL)
-    full_text = re.sub(r"\n\d{4}/P/EN/\d+ ", '', full_text, flags=re.DOTALL)
     
     #2019
-    full_text = re.sub(r"Legal questions\n", "", full_text, flags=re.DOTALL)
-    full_text = re.sub(r"\(([a-zA-Z])\)\n", r"(\1) ", full_text, flags=re.DOTALL)
+    full_text = re.sub(r"\(([a-zA-Z])\)\s*\n", r"(\1) ", full_text, flags=re.DOTALL)
     full_text = re.sub(r"([IVXLCDM]+\.\d+)\n", r"\1 ", full_text, flags=re.DOTALL)
+    full_text = re.sub(r"([IVXLCDM]-\d+\.)\s*\n", r"\1 ", full_text, flags=re.DOTALL)
+    full_text = re.sub(r"([IVXLCDM]-\d+\.)\s*", r"\1 ", full_text, flags=re.DOTALL)
     full_text = re.sub(r'\bAnnexes?\b\n?.*', '', full_text, flags=re.DOTALL)
-    full_text = re.sub(r"\n\d{4}/P/EN/\d+", '', full_text, flags=re.DOTALL)
-    full_text = re.sub(r"Claim analysis\n", "", full_text, flags=re.DOTALL)
 
     #2018
-    full_text = re.sub(r"Legal questions \n", "", full_text, flags=re.DOTALL)
     full_text = re.sub(r'Annex 1*\n?.*', '', full_text, flags=re.DOTALL)
-
-    #2017
-    full_text = re.sub(r"Claim analysis \n", "", full_text, flags=re.DOTALL)
 
     #2016
     full_text = re.sub(r"- \n", "- ", full_text, flags=re.DOTALL)
-    full_text = re.sub(r"Claim analysis  \n", "", full_text, flags=re.DOTALL)
 
     #2015
     full_text = re.sub(r"([IVXLCDM]+\.\d+\.) \n", r"\1 ", full_text, flags=re.DOTALL)
-    full_text = re.sub(r"\b([a-zA-Z])\)\n", r"\1) ", full_text, flags=re.DOTALL)
-    full_text = re.sub(r"\b([A-Z])\)\s*\n", r"\1) ", full_text, flags=re.DOTALL)
+    full_text = re.sub(r"(\n[a-zA-Z]\))\s*\n", r"\1 ", full_text, flags=re.DOTALL)
 
     #2014
     full_text = re.sub(r"([IVXLCDM]+\.\d+) \n", r"\1 ", full_text, flags=re.DOTALL)
+
+    full_text = re.sub(r"(\n\d+\.)\s*\n", r"\n\1 ", full_text, flags=re.DOTALL)
+    full_text = re.sub(r"(?<!\n)(\n\d+\.\d+)\s*", r"\n\1 ", full_text, flags=re.DOTALL)
+    full_text = re.sub(r"QUESTIONS (14-20)", r"\n\n\nQuestions \1 ", full_text, flags=re.DOTALL)
 
     return full_text
 

@@ -12,8 +12,8 @@ import re
 import json
 
 # Define input and output files
-input_file = "/home/cytech/Bulgattle/Bulgattle/databattle/ressources/PCT_articles.txt"
-output_file = "/home/cytech/Bulgattle/Bulgattle/databattle/ressources/PCT_articles.jsonl"
+input_file = "/home/cytech/Bulgattle/Bulgattle/databattle/ressources/extracted/PCT/PCT_articles.txt"
+output_file = "/home/cytech/Bulgattle/Bulgattle/databattle/ressources/extracted/PCT/PCT_articles.jsonl"
 
 # Regular expression to detect article headers
 article_pattern = re.compile(r"^Article \d+$")

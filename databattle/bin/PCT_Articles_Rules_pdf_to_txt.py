@@ -40,6 +40,9 @@ def extract_PCT_articles_txt(pdf_path: str, txt_output: str, nStart: int, nEnd: 
     full_text = re.sub(r'(?m)^CHAPTER\s+[IVXLCDM]+\b.*$', '', full_text)  # Remove chapter headers
     full_text = re.sub(r'(?m)^[A-Z ]{5,}$', '', full_text)  # Remove uppercase headers
     full_text = re.sub(r'\n\s*\n', '\n', full_text)  # Remove excessive new lines
+    full_text = re.sub(r"\(([a-zA-Z])\)\s*", r"(\1) ", full_text, flags=re.DOTALL)
+    full_text = re.sub(r"\((\d+)\)\s*", r"(\1) ", full_text, flags=re.DOTALL)
+    full_text = re.sub(r"(\(\d+\)) (\([a-zA-Z]\))", r"\1\2 ", full_text, flags=re.DOTALL)
 
     # Extract articles using regex
     pattern = r'(?m)^Article \d+ .*?(?=\nArticle \d+ \n|\Z)'
@@ -77,6 +80,8 @@ def extract_PCT_rules_txt(pdf_path: str, txt_output: str, nStart: int, nEnd: int
     full_text = re.sub(r'(?m)^[A-Z ]{5,}$', '', full_text)  # Remove uppercase headers
     full_text = re.sub(r'(?m)^\s*\d+\s*$', '', full_text)  # Remove page numbers
     full_text = re.sub(r'\n\s*\n', '\n', full_text)  # Remove excessive new lines
+    full_text = re.sub(r"(\([a-zA-Z]\))\s*", r"\1 ", full_text, flags=re.DOTALL)
+    full_text = re.sub(r"(\n\d+\.\d+)\s*", r"\1 ", full_text, flags=re.DOTALL)
     
     # Extract rules using regex
     pattern = r'(?m)^Rule \d+(?:bis)?\s{2,3}.*?(?=\nRule \d+(?:bis)?\s{2,3}\n|\Z)'
