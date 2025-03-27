@@ -78,11 +78,11 @@ Voici un aperçu de la structure des fichiers du projet :
 Bulgattle/
 ├── Dockerfile               # Définition de l'image Docker
 ├── donnees/                 # Dossier contenant les données utilisées par le chatbot
+├── extractionDonnees        # Dossier contenant les codes ayant permis l'extraction des données fournis
 ├── rag.py                   # Code principal du chatbot avec Flask
 ├── requirements.txt         # Dépendances Python nécessaires
 ├── static/                  # Fichiers statiques (HTML, CSS, JS)
 ├── README.md                # Documentation du projet
-└── ...
 ```
 
 ## Dépendances
