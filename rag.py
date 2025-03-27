@@ -10,7 +10,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
 # --- CONFIGURATION API ---
-SCW_API_KEY = os.getenv("SCW_API_KEY") or "f2103465-85af-4736-ae5f-519b7c82d217"
+SCW_API_KEY = os.getenv("SCW_API_KEY") or "" # API key for Scaleway here
 SCW_ENDPOINT = "https://api.scaleway.ai/1138408b-5317-4d40-83b1-24ebe6b8ed96/v1/chat/completions"
 MODEL_NAME = "mistral-nemo-instruct-2407"
 
@@ -158,7 +158,7 @@ print(f"{len(context_chunks)} documents chargés.")
 print("Création des embeddings...")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-#utilisation d'une bdd vectorielle pour stocker nos données et rendre les recherches plus rapides
+#utilisation d'une bdd vectorielle pour stocker nos données et rendre les recherches plus rapides. Stockage persistant pour ne pas avoir à recharger les données à chaque fois
 vectordb = Chroma.from_texts(context_chunks, embedding=embedding_model, persist_directory="epac_chroma_db")
 retriever = vectordb.as_retriever() #transforme notre bdd en un objet retriever permettant de faire des recherches de documents en fonction de la question posée cherchant les documents les plus proches de la question posée
 print("Base vectorielle prête.")

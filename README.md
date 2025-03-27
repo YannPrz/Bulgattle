@@ -30,15 +30,23 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 
-### 3. Construire l'image Docker
+### 3. Ajouter la clef API Scaleway
 
-Une fois dans le répertoire du projet, construisez l'image Docker avec la commande suivante :
+Une fois dans le répertoire, il faut ajouter la clef API Scaleway dans le fichier rag.py
+
+```bash
+SCW_API_KEY = os.getenv("SCW_API_KEY") or "Your API key"
+```
+
+### 4. Construire l'image Docker
+
+Puis construisez l'image Docker avec la commande suivante :
 
 ```bash
 docker build -t epac-chatbot .
 ```
 
-### 4. Lancer l'application Docker
+### 5. Lancer l'application Docker
 
 Ensuite, lancez le conteneur Docker en exposant le port 5000 :
 
@@ -46,7 +54,7 @@ Ensuite, lancez le conteneur Docker en exposant le port 5000 :
 docker run -p 5000:5000 --name epac-container epac-chatbot
 ```
 
-### 5. Accéder à l'interface web
+### 6. Accéder à l'interface web
 
 Double-cliquez sur le fichier chatbot.html dans le dossier static pour ouvrir l'interface du chatbot dans votre navigateur.
 
@@ -82,7 +90,7 @@ Bulgattle/
 ├── rag.py                   # Code principal du chatbot avec Flask
 ├── requirements.txt         # Dépendances Python nécessaires
 ├── static/                  # Fichiers statiques (HTML, CSS, JS)
-├── README.md                # Documentation du projet
+└── README.md                # Documentation du projet
 ```
 
 ## Dépendances
