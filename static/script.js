@@ -96,7 +96,7 @@ function addSeparator() {
   hr.style.width = "100%";
   hr.style.border = "none";
   hr.style.borderTop = "1px solid #999";
-  hr.style.margin = "20px 0";
+  hr.style.margin = "80px 0";
   messageList.appendChild(hr);
 }
 
