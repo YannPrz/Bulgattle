@@ -244,7 +244,7 @@ def extract_text_from_html_PreEx_questions_2023(html_path: str) -> str:
     for question_block in soup.find_all("div", class_="question-block"):
         question_count += 1
         question_title = question_block.find("div", class_="question-title").get_text(strip=True)
-        extracted_text += f"{question_title}:\n"
+        extracted_text += f"{question_title}\n"
 
         if question_count >= 11:
             html_content = str(question_block)  
